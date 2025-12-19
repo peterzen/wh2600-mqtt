@@ -1,6 +1,8 @@
 # wh2600-mqtt
 
-A lightweight Docker-based tool that retrieves live weather data from WH2600/Froggit personal weather stations and publishes it to MQTT.
+A lightweight Docker-based tool that retrieves live weather data from WH2600/Froggit personal weather stations and publishes it to MQTT, to be consumed by Home Assistant.
+
+This tool is also available as [HA Addon](https://github.com/peterzen/hass-pws-mqtt-addon) 
 
 ## Supported Weather Stations
 
