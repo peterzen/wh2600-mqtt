@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  wh2600-mqtt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wh2600-mqtt
+    restart: unless-stopped
+    environment:
+      # PWS (Personal Weather Station) Configuration
+      - PWS_IP=192.168.1.100
+      
+      # MQTT Broker Configuration
+      - MQTT_HOST=localhost
+      - MQTT_PORT=1883
+      - MQTT_USER=mqtt_user
+      - MQTT_PASSWORD=mqtt_password
+      
+      # MQTT Topic Configuration
+      - MQTT_TOPIC=personal_weather_station
+      - MQTT_CLIENT_ID=pwsmqttdispatcher
+      
+      # Polling Configuration
+      - FETCH_INTERVAL=60
+      
+      # Debug Configuration
+      - DEBUG_ENABLED=false
+    
+    # If you need to use host networking (e.g., for local network discovery)
+    # network_mode: host
