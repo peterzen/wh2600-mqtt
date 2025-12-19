@@ -2,9 +2,11 @@ version: "3.8"
 
 services:
   wh2600-mqtt:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/peterzen/wh2600-mqtt:latest
+    # Uncomment to build locally instead of using the published image:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: wh2600-mqtt
     restart: unless-stopped
     environment:
